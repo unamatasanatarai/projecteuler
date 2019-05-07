@@ -13,10 +13,10 @@ def run():
         moduleDuration = time.time() - timeStart
         duration += moduleDuration
 
-        print("Task {}: {} [{}s]".format(
+        print("Task {}, {}s: {}".format(
             task,
-            " pass " if result == expected else "*FAIL*",
-            toMs(moduleDuration)
+            toMs(moduleDuration),
+            "\033[32m pass \033[0m" if result == expected else "\033[31m*FAIL*\033[0m"
             ))
 
     print("Finished in {}s".format(toMs(duration)))

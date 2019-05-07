@@ -1,4 +1,5 @@
 from functools import reduce, partial
+from lib import compose
 
 def isDivisible(n):
     def yesno(num):
@@ -7,9 +8,6 @@ def isDivisible(n):
 
 isDivisibleBy3 = isDivisible(3)
 isDivisibleBy5 = isDivisible(5)
-
-def compose(*functions):
-    return reduce(lambda f, g: lambda x: f(g(x)), functions, lambda x: x)
 
 def isDivisibleBy3Or5(n):
     return isDivisibleBy3(n) or isDivisibleBy5(n)
