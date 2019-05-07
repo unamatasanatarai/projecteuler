@@ -16,4 +16,11 @@ def isDivisibleBy3Or5(n):
 
 sumMultiplesOf3Or5 = compose(sum, partial(filter, isDivisibleBy3Or5))
 
-print (sumMultiplesOf3Or5(range(2, 1000)))
+def calculate():
+    return sumMultiplesOf3Or5(range(1000))
+
+def run():
+    print(calculate())
+
+if __name__ == "__main__":
+    run()
