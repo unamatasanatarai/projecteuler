@@ -1,0 +1,16 @@
+autocmd BufWritePost .vimrc.local source $MYVIMRC
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+
+let b:ale_fixers = ['autopep8', 'isort', 'trim_whitespace']
+let b:ale_linters = ['flake8', 'pylint']
+let g:ale_python_pylint_options = '--load-plugins pylint_django --disable=missing-docstring'
+let b:ale_python_flake8_options = '--ignore=E302,W391,E305'
+

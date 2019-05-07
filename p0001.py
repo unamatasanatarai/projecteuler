@@ -1,4 +1,4 @@
-from functools import reduce, partial
+from functools import partial
 from lib import compose
 
 def isDivisible(n):
@@ -22,3 +22,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+
