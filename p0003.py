@@ -1,19 +1,4 @@
-def isPrime(number):
-    if number == 0 or number == 1:
-        return False
-
-    for test in range(2, number):
-        if number % test == 0:
-            return False
-
-    return True
-
-
-assert not isPrime(1), "One is a prime number"
-assert isPrime(2), "Two is a prime number"
-assert isPrime(3), "Three is a prime number"
-assert not isPrime(4), "Four is a prime number"
-
+from lib import isPrime
 
 def iprime():
     number = 0
@@ -21,12 +6,6 @@ def iprime():
         if isPrime(number):
             yield number
         number += 1
-
-
-for x in iprime():
-    if x > 300:
-        break
-
 
 def findPrimeFactors(number):
     if number == 10:
@@ -52,7 +31,6 @@ def solve():
 
 def run():
     print(solve())
-
 
 if __name__ == "__main__":
     run()

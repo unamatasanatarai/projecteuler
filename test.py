@@ -1,8 +1,13 @@
 import importlib
 import time
+import sys
 
 def toMs(useconds):
-    return round(useconds*1000, 6)
+    return round(useconds * 1000, 6)
+
+def runTask(number, expected):
+    module = importlib.import_module("p{}".format(number))
+    return expected == module.solve()
 
 def run():
     duration = 0
@@ -10,16 +15,15 @@ def run():
     failed = 0
 
     for (task, expected) in TESTS.items():
-        module = importlib.import_module("p{}".format(task))
         timeStart = time.time()
-        result = module.solve()
+        result = runTask(task, expected)
         moduleDuration = time.time() - timeStart
         duration += moduleDuration
         msg = "\033[32m  ok  \033[0m"
-        if result == expected:
-            passed+=1
+        if result:
+            passed += 1
         else:
-            failed+=1
+            failed += 1
             msg = "\033[31m*FAIL*\033[0m"
 
         print("Task {}, {}ms         [ {} ]".format(
@@ -33,6 +37,7 @@ def run():
     print("failed:     {}".format(failed))
     print("passed:     {}".format(passed))
 
+
 TESTS = {
     "0001": 233168,
     "0002": 4613732,
@@ -40,4 +45,7 @@ TESTS = {
 }
 
 if __name__ == "__main__":
-    run()
+    if len(sys.argv) == 2:
+        print(runTask(sys.argv[1], TESTS.get(sys.argv[1])))
+    else:
+        run()
