@@ -8,3 +8,5 @@ def isDivisible(n):
         return num % n == 0
     return yesno
 
+isEven = isDivisible(2)
+
