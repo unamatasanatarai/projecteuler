@@ -1,10 +1,4 @@
-from functools import partial
-from lib import compose
-
-def isDivisible(n):
-    def yesno(num):
-        return num % n == 0
-    return yesno
+from lib import isDivisible
 
 isDivisibleBy3 = isDivisible(3)
 isDivisibleBy5 = isDivisible(5)
@@ -12,13 +6,11 @@ isDivisibleBy5 = isDivisible(5)
 def isDivisibleBy3Or5(n):
     return isDivisibleBy3(n) or isDivisibleBy5(n)
 
-sumMultiplesOf3Or5 = compose(sum, partial(filter, isDivisibleBy3Or5))
-
-def calculate():
-    return sumMultiplesOf3Or5(range(1000))
+def solve():
+    return sum(x for x in range(1000) if isDivisibleBy3Or5(x))
 
 def run():
-    print(calculate())
+    print(solve())
 
 if __name__ == "__main__":
     run()

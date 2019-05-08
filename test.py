@@ -12,10 +12,10 @@ def run():
     for (task, expected) in TESTS.items():
         module = importlib.import_module("p{}".format(task))
         timeStart = time.time()
-        result = module.calculate()
+        result = module.solve()
         moduleDuration = time.time() - timeStart
         duration += moduleDuration
-        msg = "\033[32m pass \033[0m"
+        msg = "\033[32m  ok  \033[0m"
         if result == expected:
             passed+=1
         else:

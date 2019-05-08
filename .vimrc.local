@@ -14,3 +14,4 @@ let b:ale_linters = ['flake8', 'pylint']
 let g:ale_python_pylint_options = '--load-plugins pylint_django --disable=missing-docstring'
 let b:ale_python_flake8_options = '--ignore=E302,W391,E305'
 
+let g:ctrlp_custom_ignore = 'venv\|\.git/\|__pycache__'
