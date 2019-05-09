@@ -1,11 +1,13 @@
-from lib import isPrime
+from lib import is_prime
 
 def iprime():
-    number = 0
+    yield 2
+    number = 3
     while True:
-        if isPrime(number):
+        if is_prime(number):
             yield number
-        number += 1
+        number += 2
+
 
 def findPrimeFactors(number):
     if number <= 3:

@@ -11,7 +11,7 @@ def isDivisible(n):
 
 isEven = isDivisible(2)
 
-def isPrime(number):
+def is_prime(number):
     if number <= 1:
         return False
 
@@ -20,12 +20,10 @@ def isPrime(number):
 
     if number %2 == 0:
         return False
-
-    limit = int(math.sqrt(number))
-    for test in range(3, limit, 2):
+    limit = int(math.sqrt(number))+1
+    for test in range(3, limit):
         if number % test == 0:
             return False
 
     return True
-
 
