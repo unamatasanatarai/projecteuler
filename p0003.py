@@ -20,6 +20,7 @@ def findPrimeFactors(number):
             number = number / divisor
         else:
             divisor += 1
+
     return factors
 
 
