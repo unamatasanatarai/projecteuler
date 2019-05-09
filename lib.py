@@ -12,7 +12,7 @@ def isDivisible(n):
 isEven = isDivisible(2)
 
 def isPrime(number):
-    if number == 0 or number == 1:
+    if number <= 1:
         return False
 
     if number == 2 or number == 3:
