@@ -1,7 +1,5 @@
 def is_palindrome(string):
     string = str(string)
-    #if len(string) == 1:
-        #return True
 
     return string == string[::-1]
 
@@ -27,10 +25,9 @@ def find_largest_palindrome_no_array(lft, rght):
     return largest
 
 def find_largest_palindrome(lft, rght):
-    return max(find_all_palindromes(lft, rght))
+    return find_largest_palindrome_no_array(lft, rght)
 
 def solve():
-    return find_largest_palindrome_no_array(100,1000)
     return find_largest_palindrome(100, 1000)
 
 def run():
