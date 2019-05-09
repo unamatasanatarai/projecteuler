@@ -15,8 +15,11 @@ def find_all_palindromes(min, max):
 
     return results
 
+def find_largest_palindrome(lft, rght):
+    return max(find_all_palindromes(lft, rght))
+
 def solve():
-    return max(find_all_palindromes(100, 999))
+    return find_largest_palindrome(100, 999)
 
 def run():
     print(solve())
