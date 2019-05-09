@@ -19,7 +19,7 @@ def find_largest_palindrome(lft, rght):
     return max(find_all_palindromes(lft, rght))
 
 def solve():
-    return find_largest_palindrome(100, 999)
+    return find_largest_palindrome(100, 1000)
 
 def run():
     print(solve())
