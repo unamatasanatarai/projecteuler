@@ -26,13 +26,13 @@ def run():
             failed += 1
             msg = "\033[31m*FAIL*\033[0m"
 
-        print("Task {}, {}ms         [ {} ]".format(
+        print("[ {} ] Task {}, {}ms".format(
+            msg,
             task,
             toMs(moduleDuration),
-            msg
         ))
 
-    print("\nFinished")
+    print("\nall done^")
     print("duration:   {}ms".format(toMs(duration)))
     print("failed:     {}".format(failed))
     print("passed:     {}".format(passed))
