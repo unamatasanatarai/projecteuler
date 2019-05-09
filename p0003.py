@@ -1,15 +1,3 @@
-from lib import is_prime
-import math
-
-def iprime():
-    yield 2
-    number = 3
-    while True:
-        if is_prime(number):
-            yield number
-        number += 2
-
-
 def findPrimeFactors(number):
     factors = []
     divisor = 2
