@@ -6,13 +6,17 @@ def is_palindrome(string):
     return string == string[::-1]
 
 def find_all_palindromes(min, max):
-    while min < max:
-        if is_palindrome(min*max):
-            print(min*max)
-        min += 1
+    results = []
+    for x in range(min, max):
+        for y in range(min, max):
+            num = x*y
+            if is_palindrome(num):
+                results.append(num)
+
+    return results
 
 def solve():
-    return find_all_palindromes(100, 999)
+    return max(find_all_palindromes(100, 999))
 
 def run():
     print(solve())
