@@ -21,15 +21,11 @@ def isPrime(number):
     if number %2 == 0:
         return False
 
-    limit = math.sqrt(number)
+    limit = int(math.sqrt(number))
     for test in range(3, limit, 2):
         if number % test == 0:
             return False
 
     return True
 
-assert not isPrime(1), "One is a prime number"
-assert isPrime(2), "Two is a prime number"
-assert isPrime(3), "Three is a prime number"
-assert not isPrime(4), "Four is a prime number"
 
