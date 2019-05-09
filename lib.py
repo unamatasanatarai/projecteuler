@@ -1,4 +1,5 @@
 from functools import reduce
+import math
 
 def compose(*functions):
     return reduce(lambda f, g: lambda x: f(g(x)), functions, lambda x: x)
@@ -14,7 +15,14 @@ def isPrime(number):
     if number == 0 or number == 1:
         return False
 
-    for test in range(2, number):
+    if number == 2 or number == 3:
+        return True
+
+    if number %2 == 0:
+        return False
+
+    limit = math.sqrt(number)
+    for test in range(3, limit, 2):
         if number % test == 0:
             return False
 
