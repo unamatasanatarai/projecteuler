@@ -4,6 +4,7 @@ from p0004 import is_palindrome
 class TestTask4(unittest.TestCase):
     def test_is_palindrome_from_numbers(self):
         self.assertTrue(is_palindrome(11))
+        self.assertTrue(is_palindrome(0))
         self.assertTrue(is_palindrome(123321))
         self.assertTrue(is_palindrome(12321))
 
