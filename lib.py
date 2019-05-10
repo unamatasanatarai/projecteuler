@@ -4,12 +4,12 @@ import math
 def compose(*functions):
     return reduce(lambda f, g: lambda x: f(g(x)), functions, lambda x: x)
 
-def isDivisible(n):
+def is_divisible(n):
     def yesno(num):
         return num % n == 0
     return yesno
 
-isEven = isDivisible(2)
+is_even = is_divisible(2)
 
 def is_prime(number):
     if number <= 1:
@@ -50,3 +50,10 @@ def iprime():
             yield n
         n += 1
 
+
+def ifibonacci():
+    now = 1
+    next = 1
+    while True:
+        yield now
+        next, now = now + next, next

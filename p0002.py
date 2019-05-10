@@ -1,20 +1,14 @@
-from lib import isEven
+from lib import is_even, ifibonacci
 
-
-def ifibonacci(max):
-    now = 1
-    next = 1
-    while True:
-        if now > max:
+def fibonacci_limited(max):
+    for x in ifibonacci():
+        if x > max:
             break
-        yield now
-        next, now = now + next, next
-
-assert list(ifibonacci(10)) == [1, 1, 2, 3, 5, 8], "Fibonacci broken"
+        yield x
 
 def solve():
     max = 4_000_000
-    fib = sum(x for x in ifibonacci(max) if isEven(x))
+    fib = sum(x for x in fibonacci_limited(max) if is_even(x))
 
     return fib
 

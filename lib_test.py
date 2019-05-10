@@ -1,9 +1,9 @@
-from lib import isDivisible, isEven, is_prime
+from lib import is_divisible, is_even, is_prime
 import unittest
 
 class TestLibrary(unittest.TestCase):
     def test_is_divisible(self):
-        by3 = isDivisible(3)
+        by3 = is_divisible(3)
         self.assertTrue(by3(6))
         self.assertTrue(by3(9))
         self.assertTrue(by3(12))
@@ -11,10 +11,10 @@ class TestLibrary(unittest.TestCase):
         self.assertFalse(by3(13))
 
     def test_is_even(self):
-        self.assertTrue(isEven(2))
-        self.assertTrue(isEven(4))
-        self.assertTrue(isEven(8))
-        self.assertFalse(isEven(1))
+        self.assertTrue(is_even(2))
+        self.assertTrue(is_even(4))
+        self.assertTrue(is_even(8))
+        self.assertFalse(is_even(1))
 
     def test_is_prime(self):
         self.assertTrue(is_prime(3))

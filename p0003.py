@@ -1,4 +1,4 @@
-def findPrimeFactors(number):
+def find_prime_factors(number):
     factors = []
     divisor = 2
 
@@ -13,7 +13,7 @@ def findPrimeFactors(number):
 
 
 def solve():
-    return max(findPrimeFactors(600851475143))
+    return max(find_prime_factors(600851475143))
 
 def run():
     print(solve())
