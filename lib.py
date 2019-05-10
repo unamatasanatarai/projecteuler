@@ -41,3 +41,13 @@ def get_prime_factors(number):
             divisor += 1
 
     return factors
+
+
+def iprime():
+    # yield n
+    n = 2
+    while True:
+        if is_prime(n):
+            yield n
+        n += 1
+

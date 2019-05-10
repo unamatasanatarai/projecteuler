@@ -1,5 +1,3 @@
-from math import pow
-
 def calculate_difference_for(numbers):
     sum_of_powers = sum([x * x for x in range(numbers + 1)])
     power_of_sum = ((numbers * (numbers + 1)) / 2) ** 2

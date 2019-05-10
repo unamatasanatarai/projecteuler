@@ -1,15 +1,7 @@
-from lib import is_prime
-
-def iprime():
-    n = 2
-    yield n
-    while True:
-        if is_prime(n):
-            yield n
-        n += 1
+from lib import iprime
 
 def get_prime_number_at(position):
-    cnt = 0
+    cnt = 1
     for prime in iprime():
         if cnt == position:
             return prime
