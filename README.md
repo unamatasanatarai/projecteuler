@@ -8,16 +8,19 @@ virtualenv -p python3 venv
 
 Running all tasks is easy:
 ```
+./run
 python run.py
 ```
 
 Running one task is easy:
 ```
-python run.py 00016
+./run 0016
+python run.py 0016
 ```
 
 Running HOT is easy (with entr):
 ```
+ls *.py | entr -c ./run
 ls *.py | entr -c python run.py
 ```
 
