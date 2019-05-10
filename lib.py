@@ -44,7 +44,6 @@ def get_prime_factors(number):
 
 
 def iprime():
-    # yield n
     n = 2
     while True:
         if is_prime(n):
