@@ -18,10 +18,11 @@ def is_prime(number):
     if number == 2 or number == 3:
         return True
 
-    if number %2 == 0:
+    if number % 2 == 0:
         return False
-    limit = int(math.sqrt(number))+1
-    for test in range(3, limit):
+
+    limit = int(math.sqrt(number)) + 1
+    for test in range(3, limit, 2):
         if number % test == 0:
             return False
 
