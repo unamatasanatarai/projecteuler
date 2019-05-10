@@ -27,3 +27,16 @@ def is_prime(number):
 
     return True
 
+
+def get_prime_factors(number):
+    factors = []
+    divisor = 2
+
+    while(number > 2):
+        if (number % divisor == 0):
+            factors.append(divisor)
+            number = number / divisor
+        else:
+            divisor += 1
+
+    return factors
