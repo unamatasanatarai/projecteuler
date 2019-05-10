@@ -52,6 +52,8 @@ TESTS = {
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
+        timeStart = time.time()
         print(runTask(sys.argv[1], TESTS.get(sys.argv[1])))
+        print(toMs(time.time()-timeStart))
     else:
         run()

@@ -1,10 +1,10 @@
-from functools import partial
+from functools import partial, reduce
 from lib import compose
 
 def sum_pow_digits(power):
     r = 2 ** power
-    f = compose(sum, list, partial(map, int), list, str)
-    return f(r)
+    f = compose(partial(map, int), list, str)
+    return reduce(lambda c, t: c + t, f(r), 0)
 
 def solve():
     return sum_pow_digits(1000)
