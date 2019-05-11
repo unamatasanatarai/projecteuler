@@ -57,3 +57,8 @@ def ifibonacci():
     while True:
         yield now
         next, now = now + next, next
+
+
+def is_palindrome(string):
+    string = str(string)
+    return string == string[::-1]
