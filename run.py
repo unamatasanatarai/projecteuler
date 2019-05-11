@@ -49,12 +49,13 @@ TESTS = {
     "0013": 5537376230,
     "0016": 1366,
     "0020": 648,
+    "0028": 669171001,
 }
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         timeStart = time.time()
         print(runTask(sys.argv[1], TESTS.get(sys.argv[1])))
-        print(toMs(time.time()-timeStart))
+        print(toMs(time.time() - timeStart), "ms")
     else:
         run()
