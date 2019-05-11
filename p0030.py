@@ -1,6 +1,5 @@
 def is_pseudo_narcissistic(number, power):
-    powered = map(lambda n: int(n)**power, str(number))
-    return sum(powered) == number
+    return number == sum(int(n)**power for n in str(number))
 
 
 def sum_narcissistic_numbers(length):
