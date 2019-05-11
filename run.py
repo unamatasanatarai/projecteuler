@@ -2,10 +2,10 @@ import importlib
 import time
 import sys
 
-def toMs(useconds):
+def to_ms(useconds):
     return round(useconds * 1000, 6)
 
-def runTask(number, expected):
+def run_task(number, expected):
     module = importlib.import_module("p{}".format(number))
     return expected == module.solve()
 
@@ -16,7 +16,7 @@ def run():
 
     for (task, expected) in TESTS.items():
         timeStart = time.time()
-        result = runTask(task, expected)
+        result = run_task(task, expected)
         moduleDuration = time.time() - timeStart
         duration += moduleDuration
         msg = "\033[32m  ok  \033[0m"
@@ -29,11 +29,11 @@ def run():
         print("[ {} ] Task {}: {}ms".format(
             msg,
             task,
-            toMs(moduleDuration),
+            to_ms(moduleDuration),
         ))
 
     print("\nall done^")
-    print("duration:   {}ms".format(toMs(duration)))
+    print("duration:   {}ms".format(to_ms(duration)))
     print("failed:     {}".format(failed))
     print("passed:     {}".format(passed))
 
@@ -51,12 +51,13 @@ TESTS = {
     "0020": 648,
     "0028": 669171001,
     "0030": 443839,
+    "0034": 40730,
 }
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
         timeStart = time.time()
-        print(runTask(sys.argv[1], TESTS.get(sys.argv[1])))
-        print(toMs(time.time() - timeStart), "ms")
+        result = run_task(sys.argv[1], TESTS.get(sys.argv[1]))
+        print("[ {} ] {}ms".format(result, to_ms(time.time() - timeStart)))
     else:
         run()
