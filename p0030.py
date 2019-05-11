@@ -1,19 +1,18 @@
-def is_pseudo_narcissistic(number, power):
-    return number == sum(int(n)**power for n in str(number))
-
-
-def sum_narcissistic_numbers(length):
+def sum_pseudo_narcissistic_numbers(length):
     hi = (9**length) * length
     total = 0
+    cache = {}
+    for n in range(0, 10):
+        cache[str(n)] = n ** length
     # 1 is discarded
     for num in range(2, hi):
-        if is_pseudo_narcissistic(num, length):
+        if num == sum(cache.get(n) for n in str(num)):
             total += num
     return total
 
 
 def solve():
-    return sum_narcissistic_numbers(5)
+    return sum_pseudo_narcissistic_numbers(5)
 
 
 def run():
