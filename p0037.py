@@ -32,14 +32,27 @@ def is_truncatable_prime(prime):
 def sum_truncatable_primes():
     max = 11
     total = 0
+    beginings = ["2", "3", "5", "7"]
+    not_having = {2, 4, 5, 6, 8}
+    # middle can only be = [1, 3, 7, 9]
     for prime in iprime():
         if prime < 11:
             continue
+
+        if str(prime)[0] not in beginings:
+            continue
+
+        sp = list(str(prime))
+        del sp[0]
+        if not_having.intersection(sp):
+            continue
+
         if is_truncatable_prime(prime):
             total += prime
             max -= 1
         if not max:
             break
+
     return total
 
 def solve():
