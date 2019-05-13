@@ -1,4 +1,4 @@
-from lib import is_divisible, is_even, is_prime
+from lib import is_divisible, is_even, is_prime, is_palindrome
 import unittest
 
 class TestLibrary(unittest.TestCase):
@@ -26,6 +26,26 @@ class TestLibrary(unittest.TestCase):
         self.assertFalse(is_prime(0))
         self.assertFalse(is_prime(1))
         self.assertFalse(is_prime(-1))
+
+    def test_is_palindrome_from_numbers(self):
+        self.assertTrue(is_palindrome(11))
+        self.assertTrue(is_palindrome(0))
+        self.assertTrue(is_palindrome(123321))
+        self.assertTrue(is_palindrome(12321))
+
+    def test_is_palindrome(self):
+        self.assertTrue(is_palindrome("1"))
+        self.assertTrue(is_palindrome("11"))
+        self.assertTrue(is_palindrome("112211"))
+        self.assertTrue(is_palindrome("112abba211"))
+        self.assertTrue(is_palindrome("kayak"))
+        self.assertTrue(is_palindrome("racecar"))
+        self.assertTrue(is_palindrome("aya"))
+
+    def test_is_not_palindrome(self):
+        self.assertFalse(is_palindrome("27"))
+        self.assertFalse(is_palindrome("274"))
+        self.assertFalse(is_palindrome("robot"))
 
 if __name__ == '__main__':
     unittest.main()
