@@ -46,6 +46,7 @@ TESTS = {
     "005_smallest_multiple": 232792560,
     "006_sum_square_difference": 25164150,
     "007_10001st_prime": 104743,
+    "008_largest_product_in_a_series": 23514624000,
     "010_summation_of_primes": 142913828922,
     "013_large_sum": 5537376230,
     "016_power_digit_sum": 1366,
