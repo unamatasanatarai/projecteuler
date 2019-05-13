@@ -7,8 +7,7 @@ def sum_factorions():
     limit = 7 * cache.get("9") + 1
     tot = 0
     for num in range(3, limit):
-        s = sum(cache.get(i) for i in str(num))
-        if s == num:
+        if num == sum(cache.get(i) for i in str(num)):
             tot += num
     return tot
 
