@@ -1,12 +1,13 @@
-from lib import get_prime_factors
+from lib import lcm
 
-def smallest_multiple(lft, rght):
-    #print(set(get_prime_factors(24)).intersection(get_prime_factors(24)))
-    #print(set(get_prime_factors(24)))
-    return 2520
+def smallest_modulo(lft, rgt):
+    number = lcm(lft, lft + 1)
+    for i in range(lft, rgt):
+        number = lcm(i, number)
+    return number
 
 def solve():
-    return smallest_multiple(1, 20)
+    return smallest_modulo(1, 20)
 
 def run():
     print(solve())

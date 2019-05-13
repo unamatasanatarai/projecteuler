@@ -144,3 +144,19 @@ def ifibonacci():
 def is_palindrome(string):
     string = str(string)
     return string == string[::-1]
+
+def gcd(a, b):
+    a, b = max(a, b), min(a, b)
+    if b == 0:
+        return a
+
+    while b != 0:
+        if a > b:
+            a -= b
+        else:
+            b -= a
+    return a
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+

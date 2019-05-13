@@ -43,7 +43,7 @@ TESTS = {
     "002_even_fibonacci_numbers": 4613732,
     "003_largest_prime_factor": 6857,
     "004_largest_palindrome_product": 906609,
-    "005_smallest_multiple": 2520,
+    "005_smallest_multiple": 232792560,
     "006_sum_square_difference": 25164150,
     "007_10001st_prime": 104743,
     "010_summation_of_primes": 142913828922,
