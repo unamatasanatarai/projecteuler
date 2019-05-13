@@ -14,8 +14,8 @@ python run.py
 
 Running one task is easy:
 ```
-./run 0016
-python run.py 0016
+./run 007_10001st_prime
+python run.py 007_10001st_prime
 ```
 
 Running HOT is easy (with entr):

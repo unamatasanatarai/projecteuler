@@ -1,5 +1,5 @@
 import unittest
-from p0004 import is_palindrome
+from lib import is_palindrome
 
 class TestTask4(unittest.TestCase):
     def test_is_palindrome_from_numbers(self):

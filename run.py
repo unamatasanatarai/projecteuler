@@ -5,8 +5,8 @@ import sys
 def to_ms(useconds):
     return round(useconds * 1000, 6)
 
-def run_task(number, expected):
-    module = importlib.import_module("p{}".format(number))
+def run_task(task_file_name, expected):
+    module = importlib.import_module(task_file_name)
     return expected == module.solve()
 
 def run():
@@ -26,7 +26,7 @@ def run():
             failed += 1
             msg = "\033[31m*FAIL*\033[0m"
 
-        print("[ {} ] Task {}: {}ms".format(
+        print("[ {} ] Task {}:\t{}ms".format(
             msg,
             task,
             to_ms(moduleDuration),
@@ -39,21 +39,22 @@ def run():
 
 
 TESTS = {
-    "0001": 233168,
-    "0002": 4613732,
-    "0003": 6857,
-    "0004": 906609,
-    "0006": 25164150,
-    "0007": 104743,
-    "0010": 142913828922,
-    "0013": 5537376230,
-    "0016": 1366,
-    "0020": 648,
-    "0028": 669171001,
-    "0030": 443839,
-    "0034": 40730,
-    "0036": 872187,
-    "0037": 748317,
+    "001_multiples_of_3_and_5": 233168,
+    "002_even_fibonacci_numbers": 4613732,
+    "003_largest_prime_factor": 6857,
+    "004_largest_palindrome_product": 906609,
+    "005_smallest_multiple": 2520,
+    "006_sum_square_difference": 25164150,
+    "007_10001st_prime": 104743,
+    "010_summation_of_primes": 142913828922,
+    "013_large_sum": 5537376230,
+    "016_power_digit_sum": 1366,
+    "020_factorial_digit_sum": 648,
+    "028_number_spiral_diagonals": 669171001,
+    "030_digit_fifth_powers": 443839,
+    "034_digital_factorials": 40730,
+    "036_double_base_palindromes": 872187,
+    "037_truncatable_primes": 748317,
 }
 
 if __name__ == "__main__":
