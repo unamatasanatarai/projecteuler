@@ -1,4 +1,4 @@
-from lib import is_divisible, is_even, is_prime, is_palindrome
+from lib import is_divisible, is_even, is_prime, is_palindrome, prime_sieve
 import unittest
 
 class TestLibrary(unittest.TestCase):
@@ -46,6 +46,10 @@ class TestLibrary(unittest.TestCase):
         self.assertFalse(is_palindrome("27"))
         self.assertFalse(is_palindrome("274"))
         self.assertFalse(is_palindrome("robot"))
+
+    def test_prime_sieve(self):
+        self.assertEqual(sum(prime_sieve(21)), 77)
+        self.assertEqual(sum(prime_sieve(2000000)), 142913828922)
 
 if __name__ == '__main__':
     unittest.main()

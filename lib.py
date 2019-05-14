@@ -132,6 +132,13 @@ def iprime():
             yield n
         n += 1
 
+def prime_sieve(limit):
+    marks = [False, False] + [True] * (limit - 2)
+    for (index, number) in enumerate(marks):
+        if number:
+            for n in range(index * 2, limit, index):
+                marks[n] = False
+    return [n for n in range(0, limit) if marks[n]]
 
 def ifibonacci():
     now = 1

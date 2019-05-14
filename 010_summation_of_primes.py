@@ -1,14 +1,7 @@
-from lib import iprime
-
-def sum_primes_below(limit):
-    cnt = 0
-    for prime in iprime():
-        if (prime > limit):
-            return cnt
-        cnt += prime
+from lib import prime_sieve
 
 def solve():
-    return sum_primes_below(2_000_000)
+    return sum(prime_sieve(2_000_000))
 
 def run():
     print(solve())
