@@ -138,7 +138,7 @@ def prime_sieve(limit):
         if number:
             for n in range(index * 2, limit, index):
                 marks[n] = False
-    return [n for n in range(0, limit) if marks[n]]
+    return (n for n in range(0, limit) if marks[n])
 
 def ifibonacci():
     now = 1
