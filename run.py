@@ -52,6 +52,7 @@ TESTS = {
     "011_largest_product_in_a_grid": 70600674,
     "012_highly_divisible_triangular_number": 76576500,
     "013_large_sum": 5537376230,
+    "014_longest_collatz_sequence": 837799,
     "016_power_digit_sum": 1366,
     "020_factorial_digit_sum": 648,
     "028_number_spiral_diagonals": 669171001,
