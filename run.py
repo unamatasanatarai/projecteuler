@@ -1,4 +1,5 @@
 import importlib
+import glob
 import time
 import sys
 
@@ -45,32 +46,8 @@ def run():
     print("failed:     {}".format(failed))
     print("passed:     {}".format(passed))
 
-
-TASKS = [
-    "001_multiples_of_3_and_5",
-    "002_even_fibonacci_numbers",
-    "003_largest_prime_factor",
-    "004_largest_palindrome_product",
-    "005_smallest_multiple",
-    "006_sum_square_difference",
-    "007_10001st_prime",
-    "008_largest_product_in_a_series",
-    "009_special_pythagorean_triplet",
-    "010_summation_of_primes",
-    "011_largest_product_in_a_grid",
-    "012_highly_divisible_triangular_number",
-    "013_large_sum",
-    "014_longest_collatz_sequence",
-    "015_lattice_paths",
-    "016_power_digit_sum",
-    "017_number_letter_counts",
-    "020_factorial_digit_sum",
-    "028_number_spiral_diagonals",
-    "030_digit_fifth_powers",
-    "034_digital_factorials",
-    "036_double_base_palindromes",
-    "037_truncatable_primes",
-]
+TASKS = list(map(lambda file: file[2:][:-3], glob.glob("./[0-9]*.py")))
+TASKS.sort()
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

@@ -1,5 +1,3 @@
-from functools import lru_cache
-
 # 1, 2, ... 19
 ONE_NINETEEN = [3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8]
 # 10, 10, ... 90

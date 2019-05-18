@@ -1,3 +1,33 @@
 #!/usr/bin/env bash
 
-/usr/bin/env python3 run.py $1
+cmd="$1"
+
+case $cmd in
+
+  watch )
+    ls | entr -c /usr/bin/env python3 run.py "$2"
+    ;;
+
+  bench )
+    if [ -z "$3" ]
+    then
+      limit=100
+    else
+      limit=$3
+    fi
+
+    start=$(date +%s.%N)
+    for i in $( seq $limit )
+    do
+      ./run $2
+    done
+
+    end=$(date +%s.%N)
+    dur=$(echo "$end - $start" | bc)
+    echo $dur
+    ;;
+
+  * )
+    /usr/bin/env python3 run.py $cmd
+    ;;
+esac

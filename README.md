@@ -16,15 +16,16 @@ Running one task is easy:
 ./run 007_10001st_prime
 ```
 
-Running HOT is easy (with entr):
+Watching is easy (with entr):
 ```
-ls *.py | entr -c ./run
-ls *.py | entr -c python run.py
+./run watch
+./run watch task_file_name.py
 ```
 
 Benchmarking?
 ```
-./bench 017_number_letter_counts.py 400
+./run bench task_file_name
+./run bench task_file_name 500
 ```
 
 Testing libs is easy:
