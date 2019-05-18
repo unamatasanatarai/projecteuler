@@ -3,8 +3,12 @@ from glob import glob
 from time import time
 import sys
 
-def to_ms(useconds):
-    return round(useconds * 1000, 6)
+def us_to_time(seconds):
+    mseconds = int((seconds - int(seconds)) * 1_000_000)
+    seconds = int(seconds)
+    minutes = int(seconds / (1000 * 60))
+    return f"{minutes}m {seconds:02}s {mseconds:06}μs"
+
 
 def run_task(task_file_name):
     mod_name = task_to_module(task_file_name)
@@ -20,13 +24,10 @@ def task_to_module(task):
 
 def display_run(result, task, duration):
     msg = "\033[32m  ok  \033[0m" if result else "\033[31m*FAIL*\033[0m"
-    print("[ {} ] Task {}:\t{}ms".format(
-        msg,
-        task[0:3],
-        to_ms(duration),
-    ))
+    print(f"[ {msg} ] Task {task[0:3]}:\t{us_to_time(duration)}")
 
 def run():
+    start = time()
     duration = 0
     passed = 0
     failed = 0
@@ -41,10 +42,13 @@ def run():
 
         display_run(result.get("result"), task, result.get("duration"))
 
-    print("\nall done^")
-    print("duration:   {}ms".format(to_ms(duration)))
-    print("failed:     {}".format(failed))
-    print("passed:     {}".format(passed))
+    print(f"""
+    run complete!
+    run time:     {us_to_time(time() - start)}
+    tasks time:   {us_to_time(duration)}
+    failed:       {failed}
+    passed:       {passed}
+    """)
 
 TASKS = list(map(lambda file: file[2:][:-3], glob("./[0-9]*.py")))
 TASKS.sort()
