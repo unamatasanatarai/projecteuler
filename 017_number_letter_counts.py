@@ -5,14 +5,14 @@ ONE_NINETEEN = [3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8]
 # 10, 10, ... 90
 TEN_NINETY = [3, 6, 6, 5, 5, 5, 7, 6, 6]
 # 100, 1000, 1_000_000
-SCALES = [7, 8, 7]
+SCALES = [7, 8, 7, 7, 8, 11, 11, 10, 10, 9, 9, 9, 11, 12, 12, 17, 13, 12, 15, 12, 14, 12, 14, 15]
 
 def number_to_counts(number):
     if number == 0:
         return [0]
     ret = []
 
-    if number >= 100:
+    while number >= 100:
         zeros = len(str(number)) - 1
         index = zeros // 3
         hunds = number // (10**zeros)
