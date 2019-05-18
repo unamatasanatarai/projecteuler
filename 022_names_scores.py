@@ -2,12 +2,10 @@ from string import ascii_uppercase
 
 DB = []
 with open("022_input.txt", "r") as file:
-    DB = list(map(lambda x: x.strip('"'), file.read().split(",")))
+    DB = eval("[" + file.read() + "]")
 DB.sort()
 
-LETTER_VALUES = {}
-for letter in ascii_uppercase:
-    LETTER_VALUES[letter] = ord(letter) - 64
+LETTER_VALUES = dict(zip([x for x in ascii_uppercase], range(1, len(ascii_uppercase) + 1)))
 
 def word_value(word):
     return sum(LETTER_VALUES[letter] for letter in word)
