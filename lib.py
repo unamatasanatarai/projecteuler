@@ -14,6 +14,19 @@ def is_divisible(n):
 
 is_even = is_divisible(2)
 
+def proper_divisors(number):
+    ret = []
+    limit = int(math.sqrt(number)) + 1
+    for i in range(1, limit):
+        if number % i == 0:
+            ret.append(i)
+            dif = number // i
+            if dif != i and dif != number:
+                ret.append(dif)
+
+    ret.sort()
+    return ret
+
 def binomial(n, k):
     assert 0 < k < n
     return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
