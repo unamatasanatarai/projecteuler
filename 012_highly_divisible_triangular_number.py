@@ -1,4 +1,4 @@
-from lib import get_prime_factors
+from lib import prime_factors
 from collections import Counter
 from itertools import count
 
@@ -10,7 +10,7 @@ def itriangle():
 
 def find_number_for_divisibles(divisors_count):
     for triangle in itriangle():
-        counts = Counter(get_prime_factors(triangle))
+        counts = Counter(prime_factors(triangle))
         tot = 1
         for i in counts.values():
             tot *= i + 1

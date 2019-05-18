@@ -128,7 +128,7 @@ def my_is_prime(number):
     return True
 
 
-def get_prime_factors(number):
+def prime_factors(number):
     factors = []
     divisor = 2
 
