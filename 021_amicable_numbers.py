@@ -6,9 +6,7 @@ def amicable_numbers(limit):
         sumsums[number] = sum(proper_divisors(number))
 
     ret = []
-    for pair in sumsums.items():
-        num = pair[0]
-        num_sum = pair[1]
+    for num, num_sum in sumsums.items():
         if num == num_sum:
             continue
         amicable = sumsums.get(num_sum)
