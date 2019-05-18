@@ -1,6 +1,6 @@
-import importlib
-import glob
-import time
+from importlib import import_module
+from glob import glob
+from time import time
 import sys
 
 def to_ms(useconds):
@@ -8,11 +8,11 @@ def to_ms(useconds):
 
 def run_task(task_file_name):
     mod_name = task_to_module(task_file_name)
-    module = importlib.import_module(mod_name)
+    module = import_module(mod_name)
     expected = module.expected()
-    ts = time.time()
+    ts = time()
     result = module.solve()
-    te = time.time()
+    te = time()
     return {"result": result == expected, "duration": te - ts}
 
 def task_to_module(task):
@@ -46,7 +46,7 @@ def run():
     print("failed:     {}".format(failed))
     print("passed:     {}".format(passed))
 
-TASKS = list(map(lambda file: file[2:][:-3], glob.glob("./[0-9]*.py")))
+TASKS = list(map(lambda file: file[2:][:-3], glob("./[0-9]*.py")))
 TASKS.sort()
 
 if __name__ == "__main__":
