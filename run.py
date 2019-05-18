@@ -9,6 +9,14 @@ def run_task(task_file_name, expected):
     module = importlib.import_module(task_file_name)
     return expected == module.solve()
 
+def display_run(result, task, duration):
+    msg = "\033[32m  ok  \033[0m" if result else "\033[31m*FAIL*\033[0m"
+    print("[ {} ] Task {}:\t{}ms".format(
+        msg,
+        task[0:3],
+        to_ms(duration),
+    ))
+
 def run():
     duration = 0
     passed = 0
@@ -17,20 +25,14 @@ def run():
     for (task, expected) in TESTS.items():
         timeStart = time.time()
         result = run_task(task, expected)
-        moduleDuration = time.time() - timeStart
-        duration += moduleDuration
-        msg = "\033[32m  ok  \033[0m"
+        module_duration = time.time() - timeStart
+        duration += module_duration
         if result:
             passed += 1
         else:
             failed += 1
-            msg = "\033[31m*FAIL*\033[0m"
 
-        print("[ {} ] Task {}:\t{}ms".format(
-            msg,
-            task,
-            to_ms(moduleDuration),
-        ))
+        display_run(result, task, module_duration)
 
     print("\nall done^")
     print("duration:   {}ms".format(to_ms(duration)))
@@ -53,6 +55,7 @@ TESTS = {
     "012_highly_divisible_triangular_number": 76576500,
     "013_large_sum": 5537376230,
     "014_longest_collatz_sequence": 837799,
+    "015_lattice_paths": 137846528820,
     "016_power_digit_sum": 1366,
     "020_factorial_digit_sum": 648,
     "028_number_spiral_diagonals": 669171001,
@@ -64,8 +67,9 @@ TESTS = {
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        timeStart = time.time()
-        result = run_task(sys.argv[1], TESTS.get(sys.argv[1]))
-        print("[ {} ] {}ms".format(result, to_ms(time.time() - timeStart)))
+        task = sys.argv[1]
+        time_start = time.time()
+        result = run_task(task, TESTS.get(task))
+        display_run(result, task, time.time() - time_start)
     else:
         run()

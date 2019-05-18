@@ -11,11 +11,9 @@ def collatz(number):
 def find_longest_collatz_under(limit):
     longest = 0
     number = 0
-    coll = []
     for i in range(837799, limit):
         r = collatz(i)
         if len(r) > longest:
-            coll = r
             longest = len(r)
             number = i
     return number

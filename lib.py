@@ -14,6 +14,10 @@ def is_divisible(n):
 
 is_even = is_divisible(2)
 
+def binomial(n, k):
+    assert 0 < k < n
+    return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
+
 # fastest yet
 def is_prime(n):
     if n < 19:
