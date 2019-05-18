@@ -74,8 +74,11 @@ def find_max_adj_product(length):
 def solve():
     return find_max_adj_product(4)
 
+def expected():
+    return 70600674
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

@@ -15,8 +15,11 @@ def find_prime_factors(number):
 def solve():
     return max(find_prime_factors(600851475143))
 
+def expected():
+    return 6857
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

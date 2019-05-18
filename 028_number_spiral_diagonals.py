@@ -10,8 +10,11 @@ def sum_diagonals(size):
 def solve():
     return sum_diagonals(1001)
 
+def expected():
+    return 669171001
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

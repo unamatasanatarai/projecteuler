@@ -14,8 +14,11 @@ def sum_factorions():
 def solve():
     return sum_factorions()
 
+def expected():
+    return 40730
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

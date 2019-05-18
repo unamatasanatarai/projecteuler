@@ -15,8 +15,11 @@ def solve():
     return sum_pseudo_narcissistic_numbers(5)
 
 
+def expected():
+    return 443839
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 
 if __name__ == "__main__":

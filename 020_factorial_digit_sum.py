@@ -9,8 +9,11 @@ def sum_factorial_digits(num):
 def solve():
     return sum_factorial_digits(100)
 
+def expected():
+    return 648
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

@@ -9,8 +9,11 @@ def sum_pow_digits(power):
 def solve():
     return sum_pow_digits(1000)
 
+def expected():
+    return 1366
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

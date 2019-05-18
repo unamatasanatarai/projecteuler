@@ -12,8 +12,11 @@ def solve():
 
     return fib
 
+def expected():
+    return 4613732
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

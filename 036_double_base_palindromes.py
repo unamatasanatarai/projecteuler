@@ -7,8 +7,11 @@ def sum_double_base_palindromes():
 def solve():
     return sum_double_base_palindromes()
 
+def expected():
+    return 872187
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

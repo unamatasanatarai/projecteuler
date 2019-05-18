@@ -27,8 +27,10 @@ def find_largest_palindrome(lft, rght):
 def solve():
     return find_largest_palindrome(100, 1000)
 
-def run():
-    print(solve())
+def expected():
+    return 906609
 
+def run():
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 if __name__ == "__main__":
     run()

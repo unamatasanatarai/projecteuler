@@ -20,8 +20,11 @@ def find_number_for_divisibles(divisors_count):
 def solve():
     return find_number_for_divisibles(500)
 
+def expected():
+    return 76576500
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

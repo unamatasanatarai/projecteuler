@@ -6,8 +6,11 @@ def calculate_difference_for(numbers):
 def solve():
     return calculate_difference_for(100)
 
+def expected():
+    return 25164150
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

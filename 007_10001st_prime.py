@@ -10,8 +10,11 @@ def get_prime_number_at(position):
 def solve():
     return get_prime_number_at(10001)
 
+def expected():
+    return 104743
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

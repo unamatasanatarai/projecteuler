@@ -112,8 +112,11 @@ def first_ten_digits():
 def solve():
     return int(first_ten_digits())
 
+def expected():
+    return 5537376230
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

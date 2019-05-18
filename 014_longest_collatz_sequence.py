@@ -23,8 +23,11 @@ def solve():
     # assert find_longest_collatz_under(20) == 18, "Finding collatz broken"
     return find_longest_collatz_under(1_000_000)
 
+def expected():
+    return 837799
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

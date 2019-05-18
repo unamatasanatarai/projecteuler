@@ -58,8 +58,11 @@ def sum_truncatable_primes():
 def solve():
     return sum_truncatable_primes()
 
+def expected():
+    return 748317
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

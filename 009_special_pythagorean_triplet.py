@@ -8,8 +8,11 @@ def get_triplet_product(the_sum):
 def solve():
     return get_triplet_product(1000)
 
+def expected():
+    return 31875000
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

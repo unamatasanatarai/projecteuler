@@ -16,8 +16,11 @@ def largest_product_in_a_series(length):
 def solve():
     return largest_product_in_a_series(13)
 
+def expected():
+    return 23514624000
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()

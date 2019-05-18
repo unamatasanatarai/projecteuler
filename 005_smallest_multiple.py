@@ -9,8 +9,11 @@ def smallest_modulo(lft, rgt):
 def solve():
     return smallest_modulo(1, 20)
 
+def expected():
+    return 232792560
+
 def run():
-    print(solve())
+    print("expected: {}\nresult:   {}".format(expected(), solve()))
 
 if __name__ == "__main__":
     run()
